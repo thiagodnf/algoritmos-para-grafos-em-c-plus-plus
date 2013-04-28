@@ -15,7 +15,7 @@ class Graph {
 		~Graph();
 		void init();
 		void printMatrixToScreen();
-		void depthFirstSearch(int position);
+		void depthFirstSearch(int vertex);
 		Graph* clone();
 	private:
 		void dfs(int position,int* marked);

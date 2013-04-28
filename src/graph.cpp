@@ -39,13 +39,13 @@ void Graph::printMatrixToScreen(){
 		}
 		cout<<endl;
 	}else{
-		cout<<endl<<"    ERROR: Please, read a file."<<endl<<endl;
+		Console::print("ERROR: Please, read a file.");
 	}
 }
 
-void Graph::depthFirstSearch(int position){
-	if(position <= 0 || position > size){
-		cout<<endl<<"    ERROR in DFS: position should be between 1 and "<<size<<endl<<endl;
+void Graph::depthFirstSearch(int vertex){
+	if(vertex <= 0 || vertex > size){
+		Console::print("ERROR in DFS: vertex should be between 1 and "+size);
 	}else{
 		int* marked = new int[size];
 		for(int i=0;i<size;i++){
@@ -53,7 +53,7 @@ void Graph::depthFirstSearch(int position){
 		}
 		
 		cout<<endl;
-		dfs(position-1,marked);
+		dfs(vertex-1,marked);
 		cout<<endl<<endl;
 	}
 }
