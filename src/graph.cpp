@@ -8,10 +8,15 @@ Graph::Graph(int size){
 		this->adjacencyMatrix[i] = new double[size];
 	}
 	
-	//Initialize values
-	for(int i=0;i<size;i++){
-		for(int j=0;j<size;j++){
-			this->adjacencyMatrix[i][j] = 0;
+	init();
+}
+
+void Graph::init(){
+	if(adjacencyMatrix != NULL){
+		for(int i=0;i<size;i++){
+			for(int j=0;j<size;j++){
+				adjacencyMatrix[i][j] = 0;
+			}
 		}
 	}
 }

@@ -13,6 +13,7 @@ class Graph {
 		
 		Graph(int size);
 		~Graph();
+		void init();
 		void printMatrixToScreen();
 		void depthFirstSearch(int position);
 		Graph* clone();
