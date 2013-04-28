@@ -15,6 +15,8 @@ public:
 	
 private:
 	static bool isValidFileName(string fileName);
+	static bool isValidHeader(string line);
+	static bool isValidEdge(string line,int size);
 		
 	
  };
