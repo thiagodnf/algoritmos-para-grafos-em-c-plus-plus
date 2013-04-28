@@ -7,5 +7,5 @@ void Console::print(const char* s){
 }
 
 void Console::print(string s){
-	print(String::convertStringToChar(fileName));
+	print(String::convertStringToChar(s));
 }

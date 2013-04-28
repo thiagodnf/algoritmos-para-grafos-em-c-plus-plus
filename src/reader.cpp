@@ -2,16 +2,12 @@
 
 bool Reader::isValidFileName(string fileName){
 	if(fileName.size() == 0){
-		cout<<endl;
-		cout<<"\tERROR: Please, select a file"<<endl;
-		cout<<endl;
+		Console::print("ERROR: Please, select a file");
 		return false;
 	}
 	
 	if( ! String::endsWith(fileName,".g") && ! String::endsWith(fileName,".txt")){
-		cout<<endl;
-		cout<<"\tERROR: Please, select a file <*.txt> or <*.g>"<<endl;
-		cout<<endl;
+		Console::print("ERROR: Please, select a file <*.txt> or <*.g>");
 		return false;
 	}
 	
