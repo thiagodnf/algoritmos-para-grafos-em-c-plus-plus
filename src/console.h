@@ -13,8 +13,8 @@ using namespace std;
 class Console {
 
 public:
-	static void print(string fileName);
-	static void print(const char* fileName);
+	static void print(string s);
+	static void print(const char* s);
 };
  
  #endif /* CONSOLE_H_ */
