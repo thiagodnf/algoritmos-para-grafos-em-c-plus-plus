@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <stack>
+#include "console.h"
 
 using namespace std;
 
