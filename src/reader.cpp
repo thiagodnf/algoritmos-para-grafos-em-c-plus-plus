@@ -28,9 +28,12 @@ Graph* Reader::fromTXTorG(string fileName){
 		string line;
 		getline(myReadFile,line);
 		
+		//Read Header
 		int size = atoi(line.c_str());
+		Console::print(size);
 		graph = new Graph(size);
 		
+		//Read Edges
 		while ( ! myReadFile.eof()) {
 			getline(myReadFile,line);
 			if(line.size() != 0){

@@ -13,6 +13,7 @@ using namespace std;
 class Console {
 
 public:
+	static void print(int value);
 	static void print(string s);
 	static void print(const char* s);
 };
