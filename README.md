@@ -1,21 +1,9 @@
 MACC PAA Graph
 ==============
 
-Universidade Estadual do Ceará
+Trabalho de grafos da disciplina de PAA onde alguns algoritmos foram implementados
 
-Mestrado Acadêmico em Ciência da Computação
-
-Projeto de Análise de Algoritmo
-
-Equipe:
-
-> Robert Marinho 
-
-> Thiago Nascimento
-
-Descrição
-
-> Trabalho sobre grafos da disciplina de PAA onde alguns algoritmos foram implementados
+By Thiago Nascimento
 
 Algoritmos Implementados
 

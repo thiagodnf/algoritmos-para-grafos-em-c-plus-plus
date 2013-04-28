@@ -21,9 +21,7 @@ void Console::init(){
 	cout<<"\t Universidade Estadual do Ceara"<<endl;
 	cout<<"\t Mestrado Academico em Ciencia da Computacao"<<endl;
 	cout<<"\t Projeto de Analise de Algoritmo 2013.1"<<endl;
-	cout<<"\t Equipe:"<<endl;
-	cout<<"\t\t Robert Marinho:"<<endl;
-	cout<<"\t\t Thiago Nascimento:"<<endl;
+	cout<<"\t By Thiago Nascimento"<<endl;
 	cout<<endl;
 	cout<<"\t Precisa de ajuda? Digite:"<<endl;
 	cout<<"\t\t help:"<<endl;
