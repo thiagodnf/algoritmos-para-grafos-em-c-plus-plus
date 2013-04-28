@@ -2,11 +2,15 @@ MACC PAA Graph
 ==============
 
 Universidade Estadual do Ceará
+
 Mestrado Acadêmico em Ciência da Computação
+
 Projeto de Análise de Algoritmo
+
 Equipe:
 
 > Robert Marinho 
+
 > Thiago Nascimento
 
 Descrição
