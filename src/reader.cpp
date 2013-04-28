@@ -36,8 +36,8 @@ Graph* Reader::fromTXTorG(string fileName){
 			if(line.size() != 0){
 				vector<string> v = String::split(line," ");
 				if(v.size() != 3){
-					cout<<endl<<"\tERROR: File is not in the format"<<endl<<endl;	
-					break;
+					Console::print("ERROR: File is not in the format");
+					return NULL;
 				}
 				
 				int startNode = atoi(v[0].c_str())-1;
@@ -45,15 +45,15 @@ Graph* Reader::fromTXTorG(string fileName){
 				int value = atoi(v[2].c_str());
 				
 				if(startNode < 0 || startNode > size || destinationNode < 0 || destinationNode > size){
-					cout<<endl<<"\tERROR: File is not in the format"<<endl<<endl;	
-					break;
+					Console::print("ERROR: File is not in the format");
+					return NULL;
 				}
 				
 				graph->adjacencyMatrix[startNode][destinationNode] = value;
 			}
 		}
 	}else{
-		cout<<endl<<"\tERROR: File '"<<fileName<<"' not found"<<endl<<endl;
+		Console::print("ERROR: File '"+fileName+"' not found");
 	}
 	
 	myReadFile.close();
