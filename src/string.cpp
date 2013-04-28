@@ -29,5 +29,13 @@ vector<string> String::split(string command,const char* delimiter){
 	return result;
 }
 
+bool String::endsWith(string s,string end){
+	if (s.length() >= end.length()) {
+        return (0 == s.compare (s.length() - end.length(), end.length(), end));
+    } else {
+        return false;
+    }
+}
+
 
 

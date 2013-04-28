@@ -16,6 +16,7 @@ class String {
 		static string trim(string s);
 		static char* convertStringToChar(string s);
 		static vector<string> split(string command,const char* delimiter = " ");  
+		static bool endsWith(string s,string end);
  };
  
  #endif /* STRINGUTIL_H_ */
