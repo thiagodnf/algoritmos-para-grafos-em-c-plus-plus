@@ -16,6 +16,8 @@ public:
 	static void print(int value);
 	static void print(string s);
 	static void print(const char* s);
+	static void init();
+	static void help();
 };
  
  #endif /* CONSOLE_H_ */

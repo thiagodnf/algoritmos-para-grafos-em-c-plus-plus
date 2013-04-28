@@ -9,25 +9,11 @@
 Graph* graph = NULL;
 
 void init(){
-	cout<<endl;
-	cout<<"\t Universidade Estadual do Ceara"<<endl;
-	cout<<"\t Mestrado Academico em Ciencia da Computacao"<<endl;
-	cout<<"\t Projeto de Analise de Algoritmo 2013.1"<<endl;
-	cout<<"\t Equipe:"<<endl;
-	cout<<"\t\t Robert Marinho:"<<endl;
-	cout<<"\t\t Thiago Nascimento:"<<endl;
-	cout<<endl;
-	cout<<"\t Para ver comandos disponiveis, digite:"<<endl;
-	cout<<"\t\t help:"<<endl;
-	cout<<endl;
+	Console::init();
 }
 
 void help(){
-	cout<<endl;
-	cout<<"\t read <filename.g> | <filename.txt> \t Ler um arquivo contendo um grafo"<<endl;
-	cout<<"\t print \t Imprimir na tela matriz de adjacencias"<<endl;
-	cout<<"\t dfs <vertice> \t Executar algoritmo DFS iniciando no vertice <vertice>"<<endl;
-	cout<<endl;
+	Console::help();
 }
 
 void clear(){
@@ -39,7 +25,7 @@ void print(){
 	if(graph != NULL){
 		graph->printMatrixToScreen();
 	}else{
-		cout<<endl<<"\t ERROR: Please, read a file."<<endl<<endl;
+		Console::print("ERROR: Please, read a file.");
 	}
 }
 
@@ -51,7 +37,7 @@ void dfs(int position){
 	if(graph != NULL){
 		graph->depthFirstSearch(position);
 	}else{
-		cout<<endl<<"\t ERROR: Please, read a file."<<endl<<endl;
+		Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
 	}
 }
 
@@ -83,7 +69,7 @@ void doSomething(vector<string> v){
 	}
 	
 	if(wrong){
-		cout<<endl<<"\t ERROR: Invalid Command"<<endl<<endl;
+		Console::print("ERROR: Invalid Command");
 	}
 }
 
