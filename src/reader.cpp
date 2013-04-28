@@ -2,7 +2,12 @@
 
 Graph* Reader::fromTXT(string fileName){
 	if(fileName.size() == 0){
-		cout<<endl<<"    ERROR: Please, select a file"<<endl<<endl;	
+		cout<<endl<<"\tERROR: Please, select a file"<<endl<<endl;	
+		return NULL;
+	}
+	
+	if( ! String::endsWith(fileName,".g") && ! String::endsWith(fileName,".txt")){
+		cout<<endl<<"\tERROR: Please, select a file <*.txt> or <*.g>"<<endl<<endl;	
 		return NULL;
 	}
 
@@ -23,7 +28,7 @@ Graph* Reader::fromTXT(string fileName){
 			if(line.size() != 0){
 				vector<string> v = String::split(line," ");
 				if(v.size() != 3){
-					cout<<endl<<"    ERROR: File is not in the format"<<endl<<endl;	
+					cout<<endl<<"\tERROR: File is not in the format"<<endl<<endl;	
 					break;
 				}
 				
@@ -32,7 +37,7 @@ Graph* Reader::fromTXT(string fileName){
 				int value = atoi(v[2].c_str());
 				
 				if(startNode < 0 || startNode > size || destinationNode < 0 || destinationNode > size){
-					cout<<endl<<"    ERROR: File is not in the format"<<endl<<endl;	
+					cout<<endl<<"\tERROR: File is not in the format"<<endl<<endl;	
 					break;
 				}
 				
@@ -40,7 +45,7 @@ Graph* Reader::fromTXT(string fileName){
 			}
 		}
 	}else{
-		cout<<endl<<"    ERROR: File '"<<fileName<<"' not found"<<endl<<endl;
+		cout<<endl<<"\tERROR: File '"<<fileName<<"' not found"<<endl<<endl;
 	}
 	
 	myReadFile.close();
