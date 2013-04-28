@@ -1,13 +1,25 @@
 #include "reader.h"
 
-Graph* Reader::fromTXT(string fileName){
+bool Reader::isValidFileName(string fileName){
 	if(fileName.size() == 0){
-		cout<<endl<<"\tERROR: Please, select a file"<<endl<<endl;	
-		return NULL;
+		cout<<endl;
+		cout<<"\tERROR: Please, select a file"<<endl;
+		cout<<endl;
+		return false;
 	}
 	
 	if( ! String::endsWith(fileName,".g") && ! String::endsWith(fileName,".txt")){
-		cout<<endl<<"\tERROR: Please, select a file <*.txt> or <*.g>"<<endl<<endl;	
+		cout<<endl;
+		cout<<"\tERROR: Please, select a file <*.txt> or <*.g>"<<endl;
+		cout<<endl;
+		return false;
+	}
+	
+	return true;
+}
+
+Graph* Reader::fromTXTorG(string fileName){
+	if( ! isValidFileName(fileName)){
 		return NULL;
 	}
 

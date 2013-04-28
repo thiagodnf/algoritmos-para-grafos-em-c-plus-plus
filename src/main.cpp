@@ -44,7 +44,7 @@ void print(){
 }
 
 void read(string fileName){
-	graph = Reader::fromTXT(fileName);
+	graph = Reader::fromTXTorG(fileName);
 }
 
 void dfs(int position){

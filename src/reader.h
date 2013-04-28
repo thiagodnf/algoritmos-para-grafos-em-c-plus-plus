@@ -12,9 +12,13 @@ using namespace std;
 
 class Reader {
 
-	public:
-		static Graph* fromTXT(string fileName);
+public:
+	static Graph* fromTXTorG(string fileName);
+	
+private:
+	static bool isValidFileName(string fileName);
 		
+	
  };
  
  #endif /* READER_H_ */
