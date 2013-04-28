@@ -30,7 +30,12 @@ Graph* Reader::fromTXTorG(string fileName){
 		
 		//Read Header
 		int size = atoi(line.c_str());
-		Console::print(size);
+		
+		if(size <= 0){
+			Console::print("ERROR: The Header should be an Integer > 0 and no letter");
+			return NULL;
+		}
+		
 		graph = new Graph(size);
 		
 		//Read Edges
