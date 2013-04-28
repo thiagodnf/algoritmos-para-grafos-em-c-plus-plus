@@ -22,16 +22,19 @@ vector<string> String::split(string command,const char* delimiter){
 	vector<string> result;
 
 	while (pch != NULL){
-		string s(pch);
-		result.push_back(s);
+		result.push_back(string(pch));
 		pch = strtok (NULL, delimiter);
 	}
 	return result;
 }
 
-bool String::endsWith(string s,string end){
-	if (s.length() >= end.length()) {
-        return (0 == s.compare (s.length() - end.length(), end.length(), end));
+/**
+ * This method returns true if the character sequence represented by the argument 
+ * is a suffix of the character sequence represented by s; false otherwise.
+ */
+bool String::endsWith(string s,string suffix){
+	if (s.length() >= suffix.length()) {
+        return (0 == s.compare (s.length() - suffix.length(), suffix.length(), suffix));
     } else {
         return false;
     }
