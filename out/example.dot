@@ -1,0 +1,16 @@
+digraph{
+	1;2;3;4;5;
+	subgraph dig {
+		edge [dir=none, color=black]
+	}
+
+	subgraph g {
+	1->2;
+1->5;
+2->3;
+2->5;
+3->4;
+3->5;
+5->4;
+	}
+}

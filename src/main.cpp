@@ -5,6 +5,7 @@
 #include "graph.cpp"
 #include "string.cpp"
 #include "reader.cpp"
+#include "export.cpp"
 
 Graph* graph = NULL;
 
@@ -31,6 +32,10 @@ void print(){
 
 void read(string fileName){
 	graph = Reader::fromTXTorG(fileName);
+}
+
+void toDot(){
+	Export::toDot(graph);
 }
 
 void dfs(int position){
@@ -61,6 +66,8 @@ void doSomething(vector<string> v){
 			print();
 		}else if(v[0] == "help"){
 			help();
+		}else if(v[0] == "todot"){
+			toDot();
 		}else{
 			wrong = true;
 		}

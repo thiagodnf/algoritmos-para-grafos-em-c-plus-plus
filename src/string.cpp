@@ -15,6 +15,12 @@ char* String::convertStringToChar(string s){
 	return a;
 }
 
+string String::convertIntToString(int value){
+	char*  c = new char[value];
+	sprintf(c, "%d", value);
+	return string(c);
+}
+
 vector<string> String::split(string command,const char* delimiter){
 	char * pch = NULL;
   	pch = strtok (convertStringToChar(command),delimiter);
