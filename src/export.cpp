@@ -27,7 +27,7 @@ void Export::toDot(Graph* graph){
 		}
 	}
 	
-	//Now, the vectors will be write in the file
+	//Now, the vectors should be written to the file
 	myFile.open ("out/example.dot");
 	myFile<<"digraph{"<<endl<<"\t";
 	for(int i=0;i<g->size;i++){
