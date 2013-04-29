@@ -70,6 +70,32 @@ void Graph::dfs(int position,int* marked){
 	}
 }
 
+void Graph::breadthFirstSearch(int vertex){
+	int* marked = new int[size];
+	for(int i=0;i<size;i++){
+		marked[i] = 0;
+	}
+	queue<int> q;
+	q.push(vertex-1);
+	marked[vertex-1] = 1;
+	
+	cout<<endl<<"\t";
+	while ( ! q.empty()){
+		int v = q.front();
+		q.pop();
+		cout<<v+1<<" ";
+		for(int j=0;j<size;j++){
+			if(adjacencyMatrix[v][j] != 0){
+				if(marked[j] == 0){
+					marked[j] = 1;
+					q.push(j);
+				}
+			}
+		}
+	}
+	cout<<endl<<endl;
+}
+
 Graph* Graph::clone(){
 	Graph* g = new Graph(size);
 	

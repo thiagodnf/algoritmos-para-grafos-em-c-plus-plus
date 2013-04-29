@@ -2,7 +2,7 @@
 #define GRAPH_H_
 
 #include <iostream>
-#include <stack>
+#include <queue>
 #include "console.h"
 
 using namespace std;
@@ -17,6 +17,7 @@ class Graph {
 		void init();
 		void printMatrixToScreen();
 		void depthFirstSearch(int vertex);
+		void breadthFirstSearch(int vertex);
 		Graph* clone();
 	private:
 		void dfs(int position,int* marked);

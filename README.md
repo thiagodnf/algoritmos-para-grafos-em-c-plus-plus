@@ -8,3 +8,4 @@ By Thiago Nascimento
 Algoritmos Implementados
 
 - Depth-First Search (DFS)
+- Breadth-First Search  (BFS)

@@ -41,6 +41,14 @@ void dfs(int position){
 	}
 }
 
+void bfs(int position){
+	if(graph != NULL){
+		graph->breadthFirstSearch(position);
+	}else{
+		Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
+	}
+}
+
 void doSomething(vector<string> v){
 	bool wrong = false;
 
@@ -61,6 +69,8 @@ void doSomething(vector<string> v){
 			read(v[1]);
 		}else if(v[0] == "dfs"){
 			dfs(atoi(v[1].c_str()));
+		}else if(v[0] == "bfs"){
+			bfs(atoi(v[1].c_str()));
 		}else{
 			wrong = true;
 		}

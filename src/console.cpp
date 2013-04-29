@@ -23,8 +23,7 @@ void Console::init(){
 	cout<<"\t Projeto de Analise de Algoritmo 2013.1"<<endl;
 	cout<<"\t By Thiago Nascimento"<<endl;
 	cout<<endl;
-	cout<<"\t Precisa de ajuda? Digite:"<<endl;
-	cout<<"\t\t help:"<<endl;
+	cout<<"\t Precisa de ajuda? Digite 'help'"<<endl;
 	cout<<endl;
 }
 
