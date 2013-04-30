@@ -42,16 +42,16 @@ Graph::~Graph(){
  * Imprime da tela a matriz de adjancencias
  */
 void Graph::printMatrixToScreen(){
-	if(adjacencyMatrix != NULL){
+	if(adjacencyMatrix == NULL){
 		Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
 		return;
 	}
-	cout<<endl;
+	cout<<endl<<"\t";
 	for(int i=0;i<size;i++){
 		for(int j=0;j<size;j++){
 			cout<<adjacencyMatrix[i][j]<<" ";
 		}
-		cout<<endl;
+		cout<<endl<<"\t";
 	}
 	cout<<endl;
 }
