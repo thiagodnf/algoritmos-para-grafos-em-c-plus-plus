@@ -43,17 +43,17 @@ Graph::~Graph(){
  */
 void Graph::printMatrixToScreen(){
 	if(adjacencyMatrix != NULL){
-		cout<<endl;
-		for(int i=0;i<size;i++){
-			for(int j=0;j<size;j++){
-				cout<<adjacencyMatrix[i][j]<<" ";
-			}
-			cout<<endl;
+		Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
+		return;
+	}
+	cout<<endl;
+	for(int i=0;i<size;i++){
+		for(int j=0;j<size;j++){
+			cout<<adjacencyMatrix[i][j]<<" ";
 		}
 		cout<<endl;
-	}else{
-		Console::print("ERROR: Please, read a file.");
 	}
+	cout<<endl;
 }
 
 /**
