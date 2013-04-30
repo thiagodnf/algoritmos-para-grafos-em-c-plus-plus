@@ -4,6 +4,7 @@
 #include <iostream>
 #include <queue>
 #include "console.h"
+#include "string.h"
 
 using namespace std;
 

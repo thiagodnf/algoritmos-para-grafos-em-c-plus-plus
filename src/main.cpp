@@ -45,7 +45,7 @@ void print(){
 
 /**
  * Ler um arquivo do tipo .txt ou .g com informações sobre o grafo.
- * Para isso, a chamada deve ser "read <filetext.(txt|g)>
+ * Para isso, a chamada deve ser "read <filename.(txt|g)>
  */
 void read(string fileName){
 	graph = Reader::fromTXTorG(fileName);

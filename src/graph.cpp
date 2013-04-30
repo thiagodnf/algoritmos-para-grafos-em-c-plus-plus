@@ -45,7 +45,7 @@ void Graph::printMatrixToScreen(){
 
 void Graph::depthFirstSearch(int vertex){
 	if(vertex <= 0 || vertex > size){
-		Console::print("ERROR in DFS: vertex should be between 1 and "+size);
+		Console::print("ERROR in DFS: vertex should be between 1 and "+String::convertIntToString(size));
 	}else{
 		int* marked = new int[size];
 		for(int i=0;i<size;i++){
@@ -71,6 +71,11 @@ void Graph::dfs(int position,int* marked){
 }
 
 void Graph::breadthFirstSearch(int vertex){
+	if(vertex <= 0 || vertex > size){
+		Console::print("ERROR in BFS: vertex should be between 1 and "+String::convertIntToString(size));
+		return;
+	}
+	
 	int* marked = new int[size];
 	for(int i=0;i<size;i++){
 		marked[i] = 0;
