@@ -57,7 +57,7 @@ void Graph::printMatrixToScreen(){
 }
 
 /**
- * Algoritmo de Busca por Profundidade DFS
+ * Algoritmo de Busca em Profundidade DFS
  */
 void Graph::depthFirstSearch(int vertex){
 	//Validação necessária para que o usuario não digite um vertice que
@@ -78,7 +78,7 @@ void Graph::depthFirstSearch(int vertex){
 }
 
 /**
- * Algoritmo de Busca por Profundidade DFS
+ * Algoritmo de Busca em Profundidade DFS
  */
 void Graph::dfs(int position,int* marked){
 	cout<<position+1<<" ";
@@ -96,7 +96,7 @@ void Graph::dfs(int position,int* marked){
 }
 
 /**
- * Algoritmo de Busca por Profundidade BFS
+ * Algoritmo de Busca em Largura BFS
  */
 void Graph::breadthFirstSearch(int vertex){
 	//Validação necessária para que o usuario não digite um vertice que
