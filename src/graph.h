@@ -21,7 +21,11 @@ class Graph {
 		void breadthFirstSearch(int vertex);
 		Graph* clone();
 	private:
-		void dfs(int position,int* marked);
+		void dfs(int position,int* color);
+		
+		static int WHITE;
+		static int GRAY;
+		static int BLACK;
  };
  
  #endif /* GRAPH_H_ */

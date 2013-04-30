@@ -1,5 +1,8 @@
 #include "graph.h"
 
+int Graph::WHITE = 1;
+int Graph::GRAY = 2;
+int Graph::BLACK = 3;
 /**
  * Construtor da Classe
  */
@@ -67,32 +70,33 @@ void Graph::depthFirstSearch(int vertex){
 		return;
 	}
 	//Será criado um vetor que guardará todos os requisitos que já foram visitados.
-	int* marked = new int[size];
+	int* color = new int[size];
 	for(int i=0;i<size;i++){
-		marked[i] = 0;
+		color[i] = WHITE;
 	}
 	
 	cout<<endl<<"\t";
-	dfs(vertex-1,marked);
+	dfs(vertex-1,color);
 	cout<<endl<<endl;
 }
 
 /**
  * Algoritmo de Busca em Profundidade DFS
  */
-void Graph::dfs(int position,int* marked){
+void Graph::dfs(int position,int* color){
 	cout<<position+1<<" ";
-	marked[position] = 1;
+	color[position] = GRAY;
 	//Percorre todos os elementos que estão na lista de vertices adjacentes ao vertice de entrada e 
 	//que ainda não foram marcados ou selecionados.
 	for(int j=0;j<size;j++){
 		if(adjacencyMatrix[position][j] != 0){
-			if(marked[j] == 0){
+			if(color[j] == WHITE){
 				//Fazer chamada recursiva para chamar os elementos que ainda faltam ser percorridos
- 				dfs(j,marked);
+ 				dfs(j,color);
 			}
 		}
 	}
+	color[position] = BLACK;
 }
 
 /**
@@ -107,13 +111,13 @@ void Graph::breadthFirstSearch(int vertex){
 	}
 	
 	//Cria um vetor para marcar todos os vertices que foram visitados
-	int* marked = new int[size];
+	int* color = new int[size];
 	for(int i=0;i<size;i++){
-		marked[i] = 0;
+		color[i] = WHITE;
 	}
 	queue<int> q;
 	q.push(vertex-1);
-	marked[vertex-1] = 1;
+	color[vertex-1] = GRAY;
 	
 	cout<<endl<<"\t";
 	while ( ! q.empty()){
@@ -123,12 +127,13 @@ void Graph::breadthFirstSearch(int vertex){
 		//Percorre todos os vertices adjacentes a V que ainda não foram marcados
 		for(int j=0;j<size;j++){
 			if(adjacencyMatrix[v][j] != 0){
-				if(marked[j] == 0){
-					marked[j] = 1;
+				if(color[j] == WHITE){
+					color[j] = GRAY;
 					q.push(j);
 				}
 			}
 		}
+		color[v] = BLACK;
 	}
 	cout<<endl<<endl;
 }
