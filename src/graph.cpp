@@ -72,7 +72,7 @@ void Graph::depthFirstSearch(int vertex){
 		marked[i] = 0;
 	}
 	
-	cout<<endl;
+	cout<<endl<<"\t";
 	dfs(vertex-1,marked);
 	cout<<endl<<endl;
 }
