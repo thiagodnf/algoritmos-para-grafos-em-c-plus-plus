@@ -11,7 +11,7 @@ Algoritmos Implementados
 
 - Depth-First Search (DFS)
 - Breadth-First Search  (BFS)
-- PRIM (Árvore Geradora Mínima)
+- Algoritmo PRIM (Árvore Geradora Mínima)
 
 
 Como executar?
