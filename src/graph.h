@@ -22,7 +22,7 @@ public:
     void printMatrixToScreen();
     void depthFirstSearch(int vertex);
     void breadthFirstSearch(int vertex);
-    void prim(string fileName);
+    int* prim(string fileName);
     Graph* clone();
 private:
     void dfs(int position,int* color);

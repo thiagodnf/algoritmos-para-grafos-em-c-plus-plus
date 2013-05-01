@@ -87,9 +87,10 @@ void bfs(int vertex){
 /**
  * Método responsável por executar o algoritmo de PRIM em um grafo previamente carregado
  */
-void prim(string fileName){
+void mst(string fileName){
     if(graph != NULL){
-        graph->prim(fileName);
+        int* pi = graph->prim(fileName);
+		Export::fromVectorToGraphFile(fileName,graph,pi);
     }else{
         Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
     }
@@ -122,8 +123,8 @@ void doSomething(vector<string> v){
             dfs(atoi(v[1].c_str()));
         }else if(v[0] == "bfs"){
             bfs(atoi(v[1].c_str()));
-        }else if(v[0] == "prim"){
-            prim(v[1]);
+        }else if(v[0] == "mst"){
+            mst(v[1]);
         }else{
             wrong = true;
         }
@@ -151,7 +152,7 @@ string waitUserCommand(){
 
 
 
-int main(int argc, char *argv[])
+int main()
 {
     init();
 

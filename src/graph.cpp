@@ -138,7 +138,7 @@ void Graph::breadthFirstSearch(int vertex){
     cout<<endl<<endl;
 }
 
-void Graph::prim(string fileName){
+int* Graph::prim(string fileName){
 
     fileName = "3e4";
 
@@ -191,7 +191,7 @@ void Graph::prim(string fileName){
 
     //Depois de encontrar a arvore, o resultado
     //será salvo em um arquivo de texto especificado pelo usuario
-    //Export::fromVectorToGraphFile(fileName,this,pi);
+    return pi;    
 }
 
 /**

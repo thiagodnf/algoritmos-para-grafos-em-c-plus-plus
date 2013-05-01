@@ -56,6 +56,16 @@ void Export::toDot(Graph* graph){
 }
 
 void Export::fromVectorToGraphFile(string fileName,Graph* graph,int* vector){
+	if(graph == NULL || graph->size == 0){
+		Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
+		return;
+	}
+	
+	if(fileName.empty()){
+		Console::print("ERROR: Please, write the filename'");
+		return;
+	}
+	
     ofstream file;
     file.open (Strings::convertStringToChar(string("out/")+fileName));
 
@@ -63,12 +73,18 @@ void Export::fromVectorToGraphFile(string fileName,Graph* graph,int* vector){
     file<<Strings::convertIntToString(graph->size)<<endl;
 
     //Create edges
-    for(int i=0;i<graph->size;i++){
+    for(int i=1;i<graph->size;i++){
         string start = Strings::convertIntToString(i+1);
         string end = Strings::convertIntToString(vector[i]+1);
         double value = graph->adjacencyMatrix[i][vector[i]];
-        string valueString = Strings::convertIntToString(vector[i]+1);
+        string valueString = Strings::convertIntToString(value);
         file<<start<<" "<<end<<" "<<valueString<<endl;
+		
+		start = Strings::convertIntToString(vector[i]+1);
+		end = Strings::convertIntToString(i+1);
+		value = graph->adjacencyMatrix[vector[i]][i];
+        valueString = Strings::convertIntToString(value);
+		file<<start<<" "<<end<<" "<<valueString<<endl;
     }
     file.close();
 }
