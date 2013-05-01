@@ -185,11 +185,8 @@ int* Graph::prim(string fileName){
     }
     //No final do processo, o atributo pi[v] nomeia o pai de v na árvore.
     //Ou seja, se pi[2] = 1 então, o pai de 2 é 1 que está na árvore
-    for(int i=1;i<size;i++){
-        cout<<i+1<<"--"<<pi[i]+1<<endl;
-    }
-
-    //Depois de encontrar a arvore, o resultado
+	
+	//Depois de encontrar a arvore, o resultado
     //será salvo em um arquivo de texto especificado pelo usuario
     return pi;    
 }

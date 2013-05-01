@@ -87,4 +87,6 @@ void Export::fromVectorToGraphFile(string fileName,Graph* graph,int* vector){
 		file<<start<<" "<<end<<" "<<valueString<<endl;
     }
     file.close();
+	
+	Console::print("Success! See the file in out/"+fileName);
 }
