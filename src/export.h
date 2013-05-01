@@ -1,16 +1,16 @@
-#ifndef EXPORT_H_
-#define EXPORT_H_
+#ifndef EXPORT_H
+#define EXPORT_H
 
-#include <iostream>
 #include <fstream>
 
-using namespace std;
+#include "graph.h"
 
-class Export {
-
+class Export
+{
 public:
-	static void toDot(Graph* graph);
-	
+    Export();
+    static void toDot(Graph* graph);
+    static void fromVectorToGraphFile(string fileName,Graph* graph,int* vector);
 };
- 
- #endif /* EXPORT_H_ */
+
+#endif // EXPORT_H

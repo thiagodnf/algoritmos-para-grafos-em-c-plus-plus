@@ -1,23 +1,21 @@
-#ifndef CONSOLE_H_
-#define CONSOLE_H_
+#ifndef CONSOLE_H
+#define CONSOLE_H
 
 #include <iostream>
-#include <fstream>
-#include <cstring>
 #include <cstdio>
-#include <cstdlib>
-#include <vector>
+#include "strings.h"
 
 using namespace std;
 
-class Console {
-
+class Console
+{
 public:
-	static void print(int value);
-	static void print(string s);
-	static void print(const char* s);
-	static void init();
-	static void help();
+    Console();
+    static void print(int value);
+    static void print(string s);
+    static void print(const char* s);
+    static void init();
+    static void help();
 };
- 
- #endif /* CONSOLE_H_ */
+
+#endif // CONSOLE_H
