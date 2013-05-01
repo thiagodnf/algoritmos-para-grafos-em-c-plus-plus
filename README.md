@@ -11,6 +11,8 @@ Algoritmos Implementados
 
 - Depth-First Search (DFS)
 - Breadth-First Search  (BFS)
+- PRIM (Árvore Geradora Mínima)
+
 
 Como executar?
 ---
@@ -22,7 +24,7 @@ Abra o terminal do linux, navegue até o diretório principal e execute o comand
 
 Após esse comando, o será gerado um arquivo executável com o nome "paa". Para rodar, execute o comando:
 
-> $ ./paa
+> $ ./bin/paa
 
 Como utilizar?
 ---
