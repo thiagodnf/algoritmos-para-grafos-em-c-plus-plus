@@ -36,6 +36,16 @@ bool priorityqueue::contains(int element){
     return false;
 }
 
+void priorityqueue::setPriority(int element,int priority){
+	for(unsigned int i=0;i<elementVector.size();i++){
+		if(elementVector[i] == element){
+			priorityVector[i] = priority;
+		}
+	}
+	
+	sort();
+}
+
 void priorityqueue::sort(){
     for(unsigned int i=0;i<priorityVector.size();i++){
         for(unsigned int j=0;j<priorityVector.size()-1;j++){
@@ -50,5 +60,9 @@ void priorityqueue::sort(){
             }
         }
     }
+}
+
+int priorityqueue::get(int position){
+	return elementVector[position];
 }
 

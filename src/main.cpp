@@ -96,6 +96,14 @@ void mst(string fileName){
     }
 }
 
+void dijkstra(int startVertex,int endVertex){
+	if(graph != NULL){
+        graph->dijkstra(startVertex-1,endVertex-1);
+    }else{
+        Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
+    }
+}
+
 /**
  * Metodo responsável por tratar todas as opções disponíveis no sistema.
  */
@@ -128,7 +136,11 @@ void doSomething(vector<string> v){
         }else{
             wrong = true;
         }
-    }else{
+    }else if(v.size() == 3){
+		if(v[0] == "sp"){
+           dijkstra(atoi(v[1].c_str()),atoi(v[2].c_str()));
+		}
+	}else{
         wrong = true;
     }
 
@@ -149,27 +161,24 @@ string waitUserCommand(){
     return Strings::trim(command);
 }
 
-
-
-
 int main()
 {
     init();
 
-        //O laço será encerrado quando o comando "exit" for digitado pelo usuário.
-        while(true){
-            string command = waitUserCommand();
+	//O laço será encerrado quando o comando "exit" for digitado pelo usuário.
+	while(true){
+		string command = waitUserCommand();
 
-            //Comando vazios não devem ser tratados e um novo comando deve ser solicitado
-            if(command.size() == 0){
-                continue;
-            }
+		//Comando vazios não devem ser tratados e um novo comando deve ser solicitado
+		if(command.size() == 0){
+			continue;
+		}
 
-            //Quebramos a string digitada pelo usuario para validar a sua entrada.
-            vector<string> v = Strings::split(command);
+		//Quebramos a string digitada pelo usuario para validar a sua entrada.
+		vector<string> v = Strings::split(command);
 
-            //Com os comando disponíveis, alguma ação será tomada
-            doSomething(v);
-        }
-        return 0;
+		//Com os comando disponíveis, alguma ação será tomada
+		doSomething(v);
+	}
+	return 0;
 }

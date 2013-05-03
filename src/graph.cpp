@@ -191,6 +191,70 @@ int* Graph::prim(string fileName){
     return pi;    
 }
 
+void Graph::dijkstra(int startVertex, int endVertex){
+	//INITIALIZE-SINGLE-SOURCE(G,s)
+	int* d = new int[size];
+	int* pi = new int[size];
+	vector<int> S;
+	
+	for(int i=0;i<size;i++){
+		d[i] = 99999999;
+		pi[i] = -1;
+	}
+	
+	d[startVertex] = 0;
+
+	//RUN
+	priorityqueue* q = new priorityqueue();
+	for(int i=0;i<size;i++){
+        q->add(i,d[i]);
+    }
+    
+    while( ! q->empty()){
+		int u = extractmin(q,d);
+		S.push_back(u);
+		for(int v=0;v<size;v++){
+			if(adjacencyMatrix[u][v] != 0){
+				relax(u,v,adjacencyMatrix,d,pi);
+			}
+		}
+	}
+	
+	//Monta a sequencia de vertices
+	vector<int> ans;
+	int end = endVertex;
+	ans.push_back(end+1);
+	while (pi[end] != -1) {
+		ans.push_back(pi[end]+1);
+		end = pi[end];
+	}
+	
+	//Imprime na tela a resposta
+	cout<<endl;
+	cout<<"\t"<<d[endVertex]<<endl<<"\t";
+	int size = (int) ans.size();
+	for(int i=size-1;i>=0;i--){
+		cout<<ans[i]<<" ";
+	}
+	cout<<endl<<endl;
+}
+
+int Graph::extractmin(priorityqueue* q,int* d){
+	for(int i=0;i<q->size();i++){
+		q->setPriority(q->get(i),d[q->get(i)]);
+	}
+	return q->pop();
+}
+
+void Graph::relax(int u,int v,double** w,int* d,int* pi){
+	if(d[v] > d[u]+w[u][v]){
+		d[v] = d[u]+w[u][v];
+		pi[v] = u;
+	}
+}
+
+
+
 /**
  * Cria um novo objeto baseado nos dados do atual. Ao final do proceso, será criado um
  * novo grafo idêntico nas Arestas e Vértices.

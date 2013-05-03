@@ -12,6 +12,7 @@ Algoritmos Implementados
 - Depth-First Search (DFS)
 - Breadth-First Search  (BFS)
 - Algoritmo PRIM (Árvore Geradora Mínima)
+- Dijkstra (Caminho Mínimo)
 
 
 Como executar?

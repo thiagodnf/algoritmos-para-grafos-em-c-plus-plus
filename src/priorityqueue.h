@@ -14,6 +14,8 @@ public:
         int size();
         bool empty();
         bool contains(int element);
+		void setPriority(int element,int priority);
+		int get(int position);
     private:
         void sort();
 
