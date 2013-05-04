@@ -63,3 +63,13 @@ Opções disponíveis
 * [<b>bfs</b> < vertex>] - Executar algoritmo BFS iniciando no vertice <vertice>
 * [<b>mst</b> < fileName>] - Imprime no arquivo texto a árvore gerada mínima iniciando pelo vertice <vertice>
 * [<b>sp</b> < startVertex> < endVertex>] - Imprime na tela o menor caminho de < startVertex> até < endVertex>
+
+Formato da Instância
+---
+
+O arquivo deve possuir extensão ".g" ou ".txt" e deve está descrito da seguinte forma:
+
+* Primeira linha do arquivo deve conter a quantidade de vértices do grafo
+* Segunda linha em diante deve conter as arestas do grafo bem como seu peso.
+
+Para ver um exemplo de como deve ser montada a instância do grafo, você pode olhar os exemplos contidos na pasta "in"
