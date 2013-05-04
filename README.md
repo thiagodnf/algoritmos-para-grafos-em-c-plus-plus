@@ -1,10 +1,15 @@
 MACC PAA Graph
 ==============
 
-Esse projeto tem como objetivo implementar alguns algoritmos de Grafos para 
-a disciplina de Projeto e Análise de algoritmo (PAA)
+Universidade Estadual do Ceara
+Mestrado Academico em Ciências da Computação
+Projeto e Análise de Algoritmo 2013.1
+Autor: Thiago Nascimento
 
-By Thiago Nascimento
+Objetivo
+---
+Implementar alguns algoritmos de Grafos para 
+a disciplina de Projeto e Análise de algoritmo
 
 Algoritmos Implementados
 -------------------------
