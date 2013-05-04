@@ -4,6 +4,7 @@
 #include "export.h"
 #include "reader.h"
 #include "dijkstra.h"
+#include "prim.h"
 
 using namespace std;
 
@@ -90,8 +91,10 @@ void bfs(int vertex){
  */
 void mst(string fileName){
     if(graph != NULL){
-        int* pi = graph->prim(fileName);
-		Export::fromVectorToGraphFile(fileName,graph,pi);
+		Prim* p = new Prim(graph);
+		p->run(fileName);
+        //int* pi = graph->prim(fileName);
+		//Export::fromVectorToGraphFile(fileName,graph,pi);
     }else{
         Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
     }
