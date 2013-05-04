@@ -1,3 +1,26 @@
+/**
+ * @file main.cpp
+ * @author  Thiago Nascimento
+ * @version 1.0
+ *
+ * @section LICENSE
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of
+ * the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details at
+ * http://www.gnu.org/copyleft/gpl.html
+ *
+ * @section DESCRIPTION
+ *
+ * Classe principal do programa
+ */
+
 #include <iostream>
 #include "console.h"
 #include "graph.h"
@@ -11,21 +34,6 @@
 using namespace std;
 
 Graph* graph = NULL;
-
-/**
- * Imprime na tela o cabeçalho do programa com informações sobre o autor
- * ou por exemplo o nome da instituição
- */
-void init(){
-    Console::init();
-}
-
-/**
- * Imprime na tela os comandos diponíveis no sistema.
- */
-void help(){
-    Console::help();
-}
 
 /**
  * Elimina o grafo atual da seção
@@ -42,7 +50,7 @@ void print(){
     if(graph != NULL){
         graph->printMatrixToScreen();
     }else{
-        Console::print("ERROR: Please, read a file.");
+        Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
     }
 }
 
@@ -59,7 +67,11 @@ void read(string fileName){
  * gerar o .png do grafico.
  */
 void toDot(){
-    Export::toDot(graph);
+	if(graph != NULL){
+        Export::toDot(graph);
+    }else{
+		Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
+	}
 }
 
 /**
@@ -97,8 +109,6 @@ void mst(string fileName){
     if(graph != NULL){
 		Prim* p = new Prim(graph);
 		p->run(fileName);
-        //int* pi = graph->prim(fileName);
-		//Export::fromVectorToGraphFile(fileName,graph,pi);
     }else{
         Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
     }
@@ -127,7 +137,7 @@ void doSomething(vector<string> v){
         }else if(v[0] == "print"){
             print();
         }else if(v[0] == "help"){
-            help();
+            Console::help();
         }else if(v[0] == "todot"){
             toDot();
         }else{
@@ -148,6 +158,8 @@ void doSomething(vector<string> v){
     }else if(v.size() == 3){
 		if(v[0] == "sp"){
            dijkstra(atoi(v[1].c_str()),atoi(v[2].c_str()));
+		}else{
+			wrong = true;
 		}
 	}else{
         wrong = true;
@@ -172,7 +184,7 @@ string waitUserCommand(){
 
 int main()
 {
-    init();
+    Console::init();
 
 	//O laço será encerrado quando o comando "exit" for digitado pelo usuário.
 	while(true){
