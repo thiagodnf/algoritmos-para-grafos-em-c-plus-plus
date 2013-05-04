@@ -1,7 +1,6 @@
 #include "strings.h"
 
-Strings::Strings()
-{
+Strings::Strings(){
 }
 
 string Strings::trim(string s){
@@ -25,6 +24,10 @@ string Strings::convertIntToString(int value){
     return string(c);
 }
 
+/**
+ * Separa a string passada como argumento "command" usando como separador ou
+ * delimitador o paramentro determinado por "delimiter"
+ */
 vector<string> Strings::split(string command,const char* delimiter){
     char * pch = NULL;
     pch = strtok (convertStringToChar(command),delimiter);
@@ -39,8 +42,9 @@ vector<string> Strings::split(string command,const char* delimiter){
 }
 
 /**
- * This method returns true if the character sequence represented by the argument
- * is a suffix of the character sequence represented by s; false otherwise.
+ * Este método retorna verdadeiro se a sequencia de caracteres representado pelo
+ * argumento é sufixo da sequencia de caracteres representado por s. Retorna
+ * falso caso contrário;
  */
 bool Strings::endsWith(string s,string suffix){
     if (s.length() >= suffix.length()) {
