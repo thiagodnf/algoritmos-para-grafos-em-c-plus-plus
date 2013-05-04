@@ -60,46 +60,6 @@ void Graph::printMatrixToScreen(){
 }
 
 /**
- * Algoritmo de Busca em Profundidade DFS
- */
-void Graph::depthFirstSearch(int vertex){
-    //Validação necessária para que o usuario não digite um vertice que
-    //não exista
-    if(vertex <= 0 || vertex > size){
-        Console::print("ERROR in DFS: vertex should be between 1 and "+Strings::convertIntToString(size));
-        return;
-    }
-    //Será criado um vetor que guardará todos os requisitos que já foram visitados.
-    int* color = new int[size];
-    for(int i=0;i<size;i++){
-        color[i] = WHITE;
-    }
-
-    cout<<endl<<"\t";
-    dfs(vertex-1,color);
-    cout<<endl<<endl;
-}
-
-/**
- * Algoritmo de Busca em Profundidade DFS
- */
-void Graph::dfs(int position,int* color){
-    cout<<position+1<<" ";
-    color[position] = GRAY;
-    //Percorre todos os elementos que estão na lista de vertices adjacentes ao vertice de entrada e
-    //que ainda não foram marcados ou selecionados.
-    for(int j=0;j<size;j++){
-        if(adjacencyMatrix[position][j] != 0){
-            if(color[j] == WHITE){
-                //Fazer chamada recursiva para chamar os elementos que ainda faltam ser percorridos
-                dfs(j,color);
-            }
-        }
-    }
-    color[position] = BLACK;
-}
-
-/**
  * Cria um novo objeto baseado nos dados do atual. Ao final do proceso, será criado um
  * novo grafo idêntico nas Arestas e Vértices.
  */

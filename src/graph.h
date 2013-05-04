@@ -20,11 +20,9 @@ public:
     ~Graph();
     void init();
     void printMatrixToScreen();
-    void depthFirstSearch(int vertex);
     Graph* clone();
 private:
-    void dfs(int position,int* color);
-
+    
     static int WHITE;
     static int GRAY;
     static int BLACK;

@@ -6,6 +6,7 @@
 #include "dijkstra.h"
 #include "prim.h"
 #include "bfs.h"
+#include "dfs.h"
 
 using namespace std;
 
@@ -68,7 +69,8 @@ void toDot(){
  */
 void dfs(int vertex){
     if(graph != NULL){
-        graph->depthFirstSearch(vertex);
+		DFS* dfs = new DFS(graph);
+        dfs->run(vertex);
     }else{
         Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
     }
