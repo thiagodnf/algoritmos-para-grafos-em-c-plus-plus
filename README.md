@@ -2,8 +2,11 @@ MACC PAA Graph
 ==============
 
 Universidade Estadual do Ceara
-Mestrado Academico em Ciências da Computação
+
+Mestrado Acadêmico em Ciências da Computação
+
 Projeto e Análise de Algoritmo 2013.1
+
 Autor: Thiago Nascimento
 
 Objetivo
@@ -32,5 +35,25 @@ Após esse comando, o será gerado um arquivo executável com o nome "paa". Para
 
 > $ ./bin/paa
 
-Como utilizar?
+Precisa de ajuda?
 ---
+
+A qualquer momento você pode digitar:
+
+> \>> help
+
+E todas as opções disponíveis da aplicação serão exibidas.
+
+Opções disponíveis
+---
+
+* [<b>todot</b>] - Imprimir no arquivo texto o grafo lido no formato DOT
+* [<b>help</b>] - Imprimir na tela os comandos disponíveis
+* [<b>print</b>] - Imprimir na tela a matriz de adjacências
+* [<b>exit</b>] - Sair da aplicação
+* [<b>clear</b>] - Limpar da memória o ultimo grafo carregado
+* [<b>read</b> < filename.(g|txt)\> ] - Ler um arquivo contendo um grafo
+* [<b>dfs</b> < vertex>] - Executar algoritmo DFS iniciando no vertice <vertice>
+* [<b>bfs</b> < vertex>] - Executar algoritmo BFS iniciando no vertice <vertice>
+* [<b>mst</b> < fileName>] - Imprime no arquivo texto a árvore gerada mínima iniciando pelo vertice <vertice>
+* [<b>sp</b> < startVertex> < endVertex>] - Imprime na tela o menor caminho de < startVertex> até < endVertex>

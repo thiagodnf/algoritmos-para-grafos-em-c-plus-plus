@@ -78,7 +78,7 @@ void Console::help(){
 	cout<<"\t"<<"read <filename.(g|txt)>"<<setw(35)<<"Ler um arquivo contendo um grafo"<<endl;
 	cout<<"\t"<<"dfs <vertex>"<<setw(67)<<"Executar algoritmo DFS iniciando no vertice <vertice>"<<endl;
 	cout<<"\t"<<"bfs <vertex>"<<setw(67)<<"Executar algoritmo BFS iniciando no vertice <vertice>"<<endl;
-	cout<<"\t"<<"mst <vertex>"<<setw(96)<<"Imprime no arquivo texto a árvore gerada mínima iniciando pelo vertice <vertice>"<<endl;
+	cout<<"\t"<<"mst <filename>"<<setw(96)<<"Imprime no arquivo texto a árvore gerada mínima iniciando pelo vertice <vertice>"<<endl;
 	cout<<"\t"<<"sp <start> <end>"<<setw(63)<<"Imprime na tela o menor caminho de <start> até <end>"<<endl;
     cout<<endl;
 	
