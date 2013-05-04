@@ -19,6 +19,9 @@ void Dijkstra::initializeSingleSource(int startVertex){
 	d[startVertex] = 0;
 }
 
+/*
+ * Executa o algoritmo
+ */
 void Dijkstra::run(int startVertex,int endVertex){
 	initializeSingleSource(startVertex);
 	
@@ -56,6 +59,9 @@ void Dijkstra::run(int startVertex,int endVertex){
 	cout<<endl<<endl;
 }
 
+/**
+ * Extrai da fila de prioridade o vertice que possui a menor distancia
+ */
 int Dijkstra::extractmin(priorityqueue* q,int* d){
 	for(int i=0;i<q->size();i++){
 		q->setPriority(q->get(i),d[q->get(i)]);
