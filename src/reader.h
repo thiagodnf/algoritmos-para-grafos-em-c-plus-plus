@@ -10,8 +10,7 @@
 
 using namespace std;
 
-class Reader
-{
+class Reader{
 public:
     Reader();
     static Graph* fromTXTorG(string fileName);
