@@ -1,9 +1,7 @@
 #include "console.h"
 
-Console::Console()
-{
+Console::Console(){
 }
-
 
 void Console::print(const char* s){
     cout<<endl;
@@ -19,6 +17,14 @@ void Console::print(int value){
     char*  c = new char[value];
     sprintf(c, "%d", value);
     print(c);
+}
+
+void Console::print(int* v,int size){
+	cout<<endl<<"\t";
+	for(int i=0;i<size;i++){
+		cout<<v[i]<<" ";
+	}
+	cout<<endl;
 }
 
 void Console::init(){
