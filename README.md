@@ -14,6 +14,12 @@ Objetivo
 Implementar alguns algoritmos de Grafos para 
 a disciplina de Projeto e Análise de algoritmo
 
+Requisitos
+-------------------------
+Essa aplicação foi desenvolvida para compilar e executar em ambiente Linux.
+É necessário ter conhecimento básico em linux para compilar e executar a aplicação.
+
+
 Algoritmos Implementados
 -------------------------
 
