@@ -5,6 +5,7 @@
 #include "reader.h"
 #include "dijkstra.h"
 #include "prim.h"
+#include "bfs.h"
 
 using namespace std;
 
@@ -80,7 +81,8 @@ void dfs(int vertex){
  */
 void bfs(int vertex){
     if(graph != NULL){
-        graph->breadthFirstSearch(vertex);
+		BFS* bfs = new BFS(graph);
+        bfs->run(vertex);
     }else{
         Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
     }

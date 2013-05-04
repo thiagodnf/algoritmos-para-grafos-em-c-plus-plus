@@ -21,9 +21,7 @@ public:
     void init();
     void printMatrixToScreen();
     void depthFirstSearch(int vertex);
-    void breadthFirstSearch(int vertex);
-    int* prim(string fileName);
-	Graph* clone();
+    Graph* clone();
 private:
     void dfs(int position,int* color);
 

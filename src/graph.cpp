@@ -100,45 +100,6 @@ void Graph::dfs(int position,int* color){
 }
 
 /**
- * Algoritmo de Busca em Largura BFS
- */
-void Graph::breadthFirstSearch(int vertex){
-    //Validação necessária para que o usuario não digite um vertice que
-    //não exista
-    if(vertex <= 0 || vertex > size){
-        Console::print("ERROR in BFS: vertex should be between 1 and "+Strings::convertIntToString(size));
-        return;
-    }
-
-    //Cria um vetor para marcar todos os vertices que foram visitados
-    int* color = new int[size];
-    for(int i=0;i<size;i++){
-        color[i] = WHITE;
-    }
-    queue<int> q;
-    q.push(vertex-1);
-    color[vertex-1] = GRAY;
-
-    cout<<endl<<"\t";
-    while ( ! q.empty()){
-        int v = q.front();
-        q.pop();
-        cout<<v+1<<" ";
-        //Percorre todos os vertices adjacentes a V que ainda não foram marcados
-        for(int j=0;j<size;j++){
-            if(adjacencyMatrix[v][j] != 0){
-                if(color[j] == WHITE){
-                    color[j] = GRAY;
-                    q.push(j);
-                }
-            }
-        }
-        color[v] = BLACK;
-    }
-    cout<<endl<<endl;
-}
-
-/**
  * Cria um novo objeto baseado nos dados do atual. Ao final do proceso, será criado um
  * novo grafo idêntico nas Arestas e Vértices.
  */
