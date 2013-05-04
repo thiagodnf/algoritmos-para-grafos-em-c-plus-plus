@@ -1,9 +1,12 @@
 #include "reader.h"
 
-Reader::Reader()
-{
+Reader::Reader(){
 }
 
+/**
+ * Método responsável por validar o nome do arquivo bem como as extensões
+ * suportadas pelo programa
+ */
 bool Reader::isValidFileName(string fileName){
     if(fileName.size() == 0){
         Console::print("ERROR: Please, select a file");
@@ -18,6 +21,10 @@ bool Reader::isValidFileName(string fileName){
     return true;
 }
 
+/**
+ * Método usado para validar a primeira linha do arquivo contendo
+ * informações sobre o grafo.
+ */
 bool Reader::isValidHeader(string line){
     int size = atoi(line.c_str());
 
@@ -29,12 +36,17 @@ bool Reader::isValidHeader(string line){
     return true;
 }
 
+/**
+ * Método utilizado para validar as aretas escritas no arquivo.
+ * Nesse caso, a aresta será composta pelo vertice inicial, vertice final
+ * e peso da arestas (ambas as informações devem está separadas por "espaço"
+ */
 bool Reader::isValidEdge(string line,int size){
     vector<string> v = Strings::split(line," ");
 
     if(v.size() != 3){
-        Console::print("ERROR: File is not in the format");
-        return NULL;
+        Console::print("ERROR: File is not in the format. Line: '"+line+"'");
+        return false;
     }
 
     int startNode = atoi(v[0].c_str());
@@ -43,12 +55,15 @@ bool Reader::isValidEdge(string line,int size){
 
     if(startNode <= 0 || startNode > size || destinationNode <= 0 || destinationNode > size || value <= 0){
         Console::print("ERROR: File is not in the format. Line: '"+line+"'");
-        return NULL;
+        return false;
     }
 
     return true;
 }
 
+/**
+ * Método utilizado para ler uma instância que deverá ter a extensão .g ou .txt
+ */
 Graph* Reader::fromTXTorG(string fileName){
     if( ! isValidFileName(fileName)){
         return NULL;
@@ -62,7 +77,8 @@ Graph* Reader::fromTXTorG(string fileName){
     if (myReadFile.is_open()) {
         string line;
 
-        //Read Header
+        //Ler o cabeçalho do arquivo contendo informações sobre 
+		//a quantidade de vertices
         getline(myReadFile,line);
 
         if( ! isValidHeader(line)){
@@ -72,13 +88,12 @@ Graph* Reader::fromTXTorG(string fileName){
         int size = atoi(line.c_str());
         graph = new Graph(size);
 
-        //Read Edges
+        //Ler as arestas do grafo
         while ( ! myReadFile.eof()) {
-            //Read line
             getline(myReadFile,line);
 
-            if(line.size() != 0){
-                if(! isValidEdge(line,size)){
+            if( ! line.empty()){
+                if( ! isValidEdge(line,size)){
                     return NULL;
                 }
 
