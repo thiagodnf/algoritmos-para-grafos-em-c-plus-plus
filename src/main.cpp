@@ -3,6 +3,7 @@
 #include "graph.h"
 #include "export.h"
 #include "reader.h"
+#include "dijkstra.h"
 
 using namespace std;
 
@@ -98,7 +99,8 @@ void mst(string fileName){
 
 void dijkstra(int startVertex,int endVertex){
 	if(graph != NULL){
-        graph->dijkstra(startVertex-1,endVertex-1);
+		Dijkstra* d = new Dijkstra(graph);
+        d->run(startVertex-1,endVertex-1);
     }else{
         Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
     }
