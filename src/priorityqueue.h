@@ -6,8 +6,7 @@
 
 using namespace std;
 
-class priorityqueue
-{
+class priorityqueue{
 public:
         void add(int element,int priority);
         int pop();

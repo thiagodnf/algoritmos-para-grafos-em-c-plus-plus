@@ -7,9 +7,11 @@ void priorityqueue::add(int element,int priority){
     sort();
 }
 
-
+/**
+ * Retorna o elemento com menor prioridade e remove
+ * */
 int priorityqueue::pop(){
-    if(elementVector.size() == 0){
+    if(empty()){
         return -1;
     }
 
@@ -46,23 +48,31 @@ void priorityqueue::setPriority(int element,int priority){
 	sort();
 }
 
+/**
+ * O método de ordenação utilizado é o BubbleSort simples onde a verificação
+ * é feita atravéz da prioridade.
+ */
 void priorityqueue::sort(){
     for(unsigned int i=0;i<priorityVector.size();i++){
         for(unsigned int j=0;j<priorityVector.size()-1;j++){
             if(priorityVector[j] > priorityVector[j+1]){
-                int a = priorityVector[j];
+                int auxPri = priorityVector[j];
                 priorityVector[j] = priorityVector[j+1];
-                priorityVector[j+1] = a;
+                priorityVector[j+1] = auxPri;
 
-                int b = elementVector[j];
+                int auxEle = elementVector[j];
                 elementVector[j] = elementVector[j+1];
-                elementVector[j+1] = b;
+                elementVector[j+1] = auxEle;
             }
         }
     }
 }
 
 int priorityqueue::get(int position){
+	if(empty() || position < 0 || position >= size()){
+		return -1;
+	}
+	
 	return elementVector[position];
 }
 
