@@ -16,8 +16,9 @@ a disciplina de Projeto e Análise de algoritmo
 
 Requisitos
 -------------------------
-Essa aplicação foi desenvolvida para compilar e executar em ambiente Linux.
-É necessário ter conhecimento básico em linux para compilar e executar a aplicação.
+É necessário ter conhecimento básico em linux pois essa aplicação foi desenvolvida 
+para compilar e executar em ambiente Linux. Versão para Win32 estará disponível em
+uma versão futura da aplicação.
 
 
 Algoritmos Implementados
