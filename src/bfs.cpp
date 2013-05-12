@@ -12,7 +12,7 @@ BFS::BFS(Graph* g){
  * Executa o algoritmo Breadth-First Search
  */
 void BFS::run(int vertex){
-	  //Validação necessária para que o usuario não digite um vertice que
+	//Validação necessária para que o usuario não digite um vertice que
     //não exista
     if(vertex <= 0 || vertex > graph->size){
         Console::print("ERROR no algoritmo BFS: O vertice deve está entre 1 e "+Strings::convertIntToString(graph->size));
@@ -34,7 +34,6 @@ void BFS::run(int vertex){
         int v = q.front();
         q.pop();
         answer.push_back(v+1);
-//        cout<<v+1<<" ";
         //Percorre todos os vertices adjacentes a V que ainda não foram marcados
         for(int j=0;j<graph->size;j++){
             if(graph->adjacencyMatrix[v][j] != 0){
@@ -46,7 +45,6 @@ void BFS::run(int vertex){
         }
         color[v] = BLACK;
     }
-    //cout<<endl<<endl;
     
     Console::print(answer);
 }
