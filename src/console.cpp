@@ -50,12 +50,12 @@ void Console::print(int* v,int size){
 	cout<<endl<<endl;
 }
 
-void Console::print(int value, int* v,int size){
+void Console::print(int value, vector<int> answer){
     cout<<endl;
     cout<<"\t"<<value<<endl;
 	cout<<"\t";
-	for(int i=0;i<size;i++){
-		cout<<v[i]<<" ";
+	for(unsigned int i=0;i<answer.size();i++){
+		cout<<answer[i]<<" ";
 	}
 	cout<<endl<<endl;
 }

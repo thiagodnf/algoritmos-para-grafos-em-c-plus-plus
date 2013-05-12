@@ -50,13 +50,14 @@ void Dijkstra::run(int startVertex,int endVertex){
 	}
 	
 	//Imprime na tela a resposta
-	cout<<endl;
-	cout<<"\t"<<d[endVertex]<<endl<<"\t";
+    vector<int> answer;
+	int pathSize = d[endVertex];
 	int size = (int) ans.size();
 	for(int i=size-1;i>=0;i--){
-		cout<<ans[i]<<" ";
+    	answer.push_back(ans[i]);
 	}
-	cout<<endl<<endl;
+	
+	Console::print(pathSize,answer);	
 }
 
 /**
