@@ -29,10 +29,8 @@ void BFS::run(int vertex){
     color[vertex-1] = GRAY;
     vector<int> answer; 
     
-    cout<<endl<<"\t";
     while ( ! q.empty()){
-        int v = q.front();
-        q.pop();
+        int v = q.front(); q.pop();
         answer.push_back(v+1);
         //Percorre todos os vertices adjacentes a V que ainda não foram marcados
         for(int j=0;j<graph->size;j++){

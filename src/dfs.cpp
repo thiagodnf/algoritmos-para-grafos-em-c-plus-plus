@@ -24,24 +24,26 @@ void DFS::run(int vertex){
         color[i] = WHITE;
     }
 
-    cout<<endl<<"\t";
-    dfs(vertex-1);
-    cout<<endl<<endl;
+    vector<int> answer;
+    dfs(vertex-1,&answer);
+    
+    Console::print(answer);
 }
 
 /**
  * Algoritmo de Busca em Profundidade DFS
  */
-void DFS::dfs(int position){
-    cout<<position+1<<" ";
+void DFS::dfs(int position,vector<int> *answer){
+    answer->push_back(position+1);
     color[position] = GRAY;
+    
     //Percorre todos os elementos que estão na lista de vertices adjacentes ao vertice de entrada e
     //que ainda não foram marcados ou selecionados.
     for(int j=0;j<graph->size;j++){
         if(graph->adjacencyMatrix[position][j] != 0){
             if(color[j] == WHITE){
                 //Fazer chamada recursiva para chamar os elementos que ainda faltam ser percorridos
-                dfs(j);
+                dfs(j,answer);
             }
         }
     }

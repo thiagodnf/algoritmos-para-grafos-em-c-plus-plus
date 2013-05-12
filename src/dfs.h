@@ -34,7 +34,7 @@ public:
     void run(int vertex);
 	
 private:
-	void dfs(int position);
+	void dfs(int position,vector<int>* answer);
 	
 	static int WHITE;
     static int GRAY;
