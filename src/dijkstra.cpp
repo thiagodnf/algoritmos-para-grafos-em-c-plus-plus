@@ -23,6 +23,11 @@ void Dijkstra::initializeSingleSource(int startVertex){
  * Executa o algoritmo
  */
 void Dijkstra::run(int startVertex,int endVertex){
+     if(startVertex <= 0 || startVertex > graph->size || endVertex <= 0 || endVertex > graph->size){
+        Console::print("ERROR in DFS: vertex should be between 1 and "+Strings::convertIntToString(graph->size));
+        return;
+    }
+
 	initializeSingleSource(startVertex);
 	
 	priorityqueue* q = new priorityqueue();
