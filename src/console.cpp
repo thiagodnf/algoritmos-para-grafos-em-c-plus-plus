@@ -50,6 +50,25 @@ void Console::print(int* v,int size){
 	cout<<endl<<endl;
 }
 
+void Console::print(int value, int* v,int size){
+    cout<<endl;
+    cout<<"\t"<<value<<endl;
+	cout<<"\t";
+	for(int i=0;i<size;i++){
+		cout<<v[i]<<" ";
+	}
+	cout<<endl<<endl;
+}
+
+void Console::print(vector<int> answer){
+    int* a = new int[answer.size()];
+    
+    for(unsigned int i=0;i<answer.size();i++){
+        a[i] = answer[i];
+    }
+    print(a,(int)answer.size());
+}
+
 /**
  * Imprime na tela o cabeçalho do programa com informações sobre o autor
  * ou por exemplo o nome da instituição

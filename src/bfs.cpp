@@ -15,7 +15,7 @@ void BFS::run(int vertex){
 	  //Validação necessária para que o usuario não digite um vertice que
     //não exista
     if(vertex <= 0 || vertex > graph->size){
-        Console::print("ERROR in BFS: vertex should be between 1 and "+Strings::convertIntToString(graph->size));
+        Console::print("ERROR no algoritmo BFS: O vertice deve está entre 1 e "+Strings::convertIntToString(graph->size));
         return;
     }
 
@@ -27,12 +27,14 @@ void BFS::run(int vertex){
     queue<int> q;
     q.push(vertex-1);
     color[vertex-1] = GRAY;
-
+    vector<int> answer; 
+    
     cout<<endl<<"\t";
     while ( ! q.empty()){
         int v = q.front();
         q.pop();
-        cout<<v+1<<" ";
+        answer.push_back(v+1);
+//        cout<<v+1<<" ";
         //Percorre todos os vertices adjacentes a V que ainda não foram marcados
         for(int j=0;j<graph->size;j++){
             if(graph->adjacencyMatrix[v][j] != 0){
@@ -44,5 +46,7 @@ void BFS::run(int vertex){
         }
         color[v] = BLACK;
     }
-    cout<<endl<<endl;
+    //cout<<endl<<endl;
+    
+    Console::print(answer);
 }

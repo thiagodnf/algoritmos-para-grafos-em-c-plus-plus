@@ -35,6 +35,8 @@ public:
     static void print(string s);
     static void print(const char* s);
 	static void print(int* v,int size);
+	static void print(int value,int* v,int size);
+	static void print(vector<int> answer);
     static void init();
     static void help();
 };
