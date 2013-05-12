@@ -24,7 +24,7 @@ void Dijkstra::initializeSingleSource(int startVertex){
  */
 void Dijkstra::run(int startVertex,int endVertex){
      if(startVertex <= 0 || startVertex > graph->size || endVertex <= 0 || endVertex > graph->size){
-        Console::print("ERROR in DFS: vertex should be between 1 and "+Strings::convertIntToString(graph->size));
+        Console::print("ERRO no Dijkstra: os vertices devem está entre 1 e "+Strings::convertIntToString(graph->size));
         return;
     }
 

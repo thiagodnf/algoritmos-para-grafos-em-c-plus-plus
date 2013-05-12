@@ -15,7 +15,7 @@ void DFS::run(int vertex){
 	//Validação necessária para que o usuario não digite um vertice que
     //não exista
     if(vertex <= 0 || vertex > graph->size){
-        Console::print("ERROR in DFS: vertex should be between 1 and "+Strings::convertIntToString(graph->size));
+        Console::print("ERRO no DFS: vértices devem está entre 1 e "+Strings::convertIntToString(graph->size));
         return;
     }
     //Será criado um vetor que guardará todos os requisitos que já foram visitados.

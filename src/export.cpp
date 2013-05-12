@@ -9,7 +9,7 @@ Export::Export(){
  */
 void Export::toDot(Graph* graph){
     if(graph == NULL){
-        Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
+        Console::print("ERRO: Por favor, leia um arquivo antes. Use 'read <filename.g> | <filename.txt>'");
         return;
     }
 
@@ -62,12 +62,12 @@ void Export::toDot(Graph* graph){
 
 void Export::fromVectorToGraphFile(string fileName,Graph* graph,int* vector){
 	if(graph == NULL || graph->size == 0){
-		Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
+		Console::print("ERRO: Por favor, leia um arquivo antes. Use 'read <filename.g> | <filename.txt>'");
 		return;
 	}
 	
 	if(fileName.empty()){
-		Console::print("ERROR: Please, write the filename'");
+		Console::print("ERRO: Por favor, escreva o nome do arquivo de saída'");
 		return;
 	}
 	
@@ -94,5 +94,5 @@ void Export::fromVectorToGraphFile(string fileName,Graph* graph,int* vector){
     }
     file.close();
 	
-	Console::print("Success! See the file in out/"+fileName);
+	Console::print("Sucesso! Veja o arquivo de saida em out/"+fileName);
 }

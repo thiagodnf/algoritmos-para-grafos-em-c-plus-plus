@@ -9,12 +9,12 @@ Reader::Reader(){
  */
 bool Reader::isValidFileName(string fileName){
     if(fileName.size() == 0){
-        Console::print("ERROR: Please, select a file");
+        Console::print("ERRO: Por favor, selecione um arquivo");
         return false;
     }
 
     if( ! Strings::endsWith(fileName,".g") && ! Strings::endsWith(fileName,".txt")){
-        Console::print("ERROR: Please, select a file <*.txt> or <*.g>");
+        Console::print("ERRO: Por favor, selecione um arquivodo tipo <*.txt> or <*.g>");
         return false;
     }
 
@@ -29,7 +29,7 @@ bool Reader::isValidHeader(string line){
     int size = atoi(line.c_str());
 
     if(size <= 0){
-        Console::print("ERROR: The Header should be an Integer > 0 and no letter");
+        Console::print("ERRO: O cabeçalho deve ser um inteiro > 0 e não pode ter letras");
         return false;
     }
 
@@ -45,7 +45,7 @@ bool Reader::isValidEdge(string line,int size){
     vector<string> v = Strings::split(line," ");
 
     if(v.size() != 3){
-        Console::print("ERROR: File is not in the format. Line: '"+line+"'");
+        Console::print("ERRO: O arquivo não está no formato. Linha: '"+line+"'");
         return false;
     }
 
@@ -54,7 +54,7 @@ bool Reader::isValidEdge(string line,int size){
     int value = atoi(v[2].c_str());
 
     if(startNode <= 0 || startNode > size || destinationNode <= 0 || destinationNode > size || value <= 0){
-        Console::print("ERROR: File is not in the format. Line: '"+line+"'");
+        Console::print("ERRO: O arquivo não está no formato. Linha: '"+line+"'");
         return false;
     }
 
@@ -107,7 +107,7 @@ Graph* Reader::fromTXTorG(string fileName){
             }
         }
     }else{
-        Console::print("ERROR: File '"+fileName+"' not found");
+        Console::print("ERRO: O arquivo '"+fileName+"' não foi encontrado");
     }
 
     myReadFile.close();

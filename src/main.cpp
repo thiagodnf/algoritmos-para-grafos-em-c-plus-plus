@@ -50,7 +50,7 @@ void print(){
     if(graph != NULL){
         graph->printMatrixToScreen();
     }else{
-        Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
+        Console::print("ERRO: Por favor, leia um arquivo antes. Use 'read <filename.g> | <filename.txt>'");
     }
 }
 
@@ -70,7 +70,7 @@ void toDot(){
 	if(graph != NULL){
         Export::toDot(graph);
     }else{
-		Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
+		Console::print("ERRO: Por favor, leia um arquivo antes. Use 'read <filename.g> | <filename.txt>'");
 	}
 }
 
@@ -84,7 +84,7 @@ void dfs(int vertex){
 		DFS* dfs = new DFS(graph);
         dfs->run(vertex);
     }else{
-        Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
+        Console::print("ERRO: Por favor, leia um arquivo antes. Use 'read <filename.g> | <filename.txt>'");
     }
 }
 
@@ -98,7 +98,7 @@ void bfs(int vertex){
 		BFS* bfs = new BFS(graph);
         bfs->run(vertex);
     }else{
-        Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
+        Console::print("ERRO: Por favor, leia um arquivo antes. Use 'read <filename.g> | <filename.txt>'");
     }
 }
 
@@ -110,7 +110,7 @@ void mst(string fileName){
 		Prim* p = new Prim(graph);
 		p->run(fileName);
     }else{
-        Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
+        Console::print("ERRO: Por favor, leia um arquivo antes. Use 'read <filename.g> | <filename.txt>'");
     }
 }
 
@@ -119,7 +119,7 @@ void dijkstra(int startVertex,int endVertex){
 		Dijkstra* d = new Dijkstra(graph);
         d->run(startVertex-1,endVertex-1);
     }else{
-        Console::print("ERROR: Please, read a file. Use 'read <filename.g> | <filename.txt>'");
+        Console::print("ERRO: Por favor, leia um arquivo antes. Use 'read <filename.g> | <filename.txt>'");
     }
 }
 
@@ -166,7 +166,7 @@ void doSomething(vector<string> v){
     }
 
     if(wrong){
-        Console::print("ERROR: Invalid Command");
+        Console::print("ERRO: Comando Inválido");
     }
 }
 
