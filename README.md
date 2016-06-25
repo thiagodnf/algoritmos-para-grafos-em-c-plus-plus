@@ -1,7 +1,7 @@
 Algoritmos para Grafos em C++ 
 ==============
 
-Neste projeto foi desenvolvido um console interativo onde o usuário tem a possibilidade de ler ums instância de um grafo e executar alguns algoritmos.
+Neste projeto foi desenvolvido um console interativo onde o usuário tem a possibilidade de ler instâncias de um grafo e executar alguns algoritmos sobre ela.
 
 Requisitos
 -------------------------
