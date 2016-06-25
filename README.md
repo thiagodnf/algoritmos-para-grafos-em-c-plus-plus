@@ -1,25 +1,11 @@
-MACC PAA Graph
+Algoritmos para Grafos em C++ 
 ==============
 
-Universidade Estadual do Ceara
-
-Mestrado Acadêmico em Ciências da Computação
-
-Projeto e Análise de Algoritmo 2013.1
-
-Autor: Thiago Nascimento
-
-Objetivo
----
-Implementar alguns algoritmos de Grafos para 
-a disciplina de Projeto e Análise de algoritmo
+Neste projeto foi desenvolvido um console interativo onde o usuário tem a possibilidade de ler ums instância de um grafo e executar alguns algoritmos.
 
 Requisitos
 -------------------------
-É necessário ter conhecimento básico em manipulação de terminal pois essa aplicação foi desenvolvida 
-para compilar e executar em ambiente Linux. Versão para Windows estará disponível em
-uma versão futura da aplicação.
-
+É necessário ter conhecimento básico em manipulação de terminal pois essa aplicação foi desenvolvida para compilar e executar em ambiente Linux. 
 
 Algoritmos Implementados
 -------------------------
@@ -29,25 +15,29 @@ Algoritmos Implementados
 - Algoritmo PRIM (Árvore Geradora Mínima)
 - Dijkstra (Caminho Mínimo)
 
-
 Como executar?
 ---
-O projeto não possui nenhum binário associado para execução. 
-Para isso, você precisará compilar o código antes de executar a aplicação. 
-Abra o terminal do linux, navegue até o diretório principal e execute o comando:
 
-> $ make
+O projeto não possui nenhum binário associado para execução. Para isso, você precisará compilar o código antes de executar a aplicação. Abra o terminal do linux, navegue até o diretório principal e execute o comando:
+
+```shell
+$ make
+````
 
 Após esse comando, o será gerado um arquivo executável com o nome "paa". Para rodar, execute o comando:
 
-> $ ./bin/paa
+```shell
+$ ./bin/paa
+```
 
 Precisa de ajuda?
 ---
 
 A qualquer momento você pode digitar:
 
-> \>> help
+```shell
+>> help
+```
 
 E todas as opções disponíveis da aplicação serão exibidas.
 
@@ -73,4 +63,11 @@ O arquivo deve possuir extensão ".g" ou ".txt" e deve está descrito da seguint
 * Primeira linha do arquivo deve conter a quantidade de vértices do grafo
 * Segunda linha em diante deve conter as arestas do grafo bem como seu peso.
 
-Para ver um exemplo de como deve ser montada a instância do grafo, você pode olhar os exemplos contidos na pasta "in"
+Para ver um exemplo de como deve ser montada a instância do grafo, você pode olhar os exemplos contidos na pasta "in".
+
+Contact
+---
+
+Se você encontrou algum problema, por favor use o [GitHub Issue Tracker](https://github.com/thiagodnf/algoritmos-para-grafos-em-c-plus-plus/issues) 
+
+Se você gostou deste projeto, conte-me!
