@@ -59,7 +59,7 @@ O arquivo deve possuir extensão ".g" ou ".txt" e deve está descrito da seguint
 
 Para ver um exemplo de como deve ser montada a instância do grafo, você pode olhar os exemplos contidos na pasta "in".
 
-## Contact
+## Contato
 
 Se você encontrou algum problema, por favor use o [GitHub Issue Tracker](https://github.com/thiagodnf/algoritmos-para-grafos-em-c-plus-plus/issues) 
 
