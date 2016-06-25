@@ -1,6 +1,4 @@
-![alt tag](https://raw.githubusercontent.com/thiagodnf/algoritmos-para-grafos-em-c-plus-plus/master/img/logo-200.png)
-
-# Algoritmos para Grafos em C++ 
+![alt tag](https://raw.githubusercontent.com/thiagodnf/algoritmos-para-grafos-em-c-plus-plus/master/img/logo-1.png)
 
 Neste projeto foi desenvolvido um console interativo onde o usuário tem a possibilidade de ler instâncias de um grafo e executar alguns algoritmos sobre ela.
 
