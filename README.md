@@ -1,4 +1,4 @@
-![alt tag](https://raw.githubusercontent.com/thiagodnf/algoritmos-para-grafos-em-c-plus-plus/master/img/logo-72x72.png)
+![alt tag](https://raw.githubusercontent.com/thiagodnf/algoritmos-para-grafos-em-c-plus-plus/master/img/logo-200.png)
 
 # Algoritmos para Grafos em C++ 
 
